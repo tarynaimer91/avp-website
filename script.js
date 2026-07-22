@@ -121,3 +121,101 @@ window.addEventListener("resize", () => {
     closeMenu();
   }
 });
+
+/* Progressive interaction layer */
+
+const prefersReducedMotion = window.matchMedia(
+  "(prefers-reduced-motion: reduce)"
+).matches;
+
+const scrollProgress = document.createElement("div");
+scrollProgress.className = "scroll-progress";
+scrollProgress.setAttribute("aria-hidden", "true");
+document.body.appendChild(scrollProgress);
+
+function updateScrollEffects() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  scrollProgress.style.transform = `scaleX(${Math.min(1, progress)})`;
+
+  if (!prefersReducedMotion) {
+    document.documentElement.style.setProperty(
+      "--page-shift",
+      `${Math.min(window.scrollY * 0.055, 48)}px`
+    );
+  }
+}
+
+window.addEventListener("scroll", updateScrollEffects, { passive: true });
+updateScrollEffects();
+
+const interactiveCards = document.querySelectorAll(
+  ".capability-card, .engagement-card, .difference-item"
+);
+
+interactiveCards.forEach((card) => {
+  card.classList.add("interactive-card");
+
+  card.addEventListener("pointermove", (event) => {
+    const rect = card.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    card.style.setProperty("--spot-x", `${x}px`);
+    card.style.setProperty("--spot-y", `${y}px`);
+
+    if (prefersReducedMotion || !window.matchMedia("(pointer: fine)").matches) {
+      return;
+    }
+
+    const rotateX = ((y / rect.height) - 0.5) * -3.5;
+    const rotateY = ((x / rect.width) - 0.5) * 3.5;
+    card.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-5px)`;
+  });
+
+  card.addEventListener("pointerleave", () => {
+    card.style.removeProperty("transform");
+  });
+});
+
+if (!prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  document.querySelectorAll(".button, .nav-cta").forEach((button) => {
+    button.classList.add("magnetic");
+
+    button.addEventListener("pointermove", (event) => {
+      const rect = button.getBoundingClientRect();
+      const x = (event.clientX - rect.left - rect.width / 2) * 0.12;
+      const y = (event.clientY - rect.top - rect.height / 2) * 0.12;
+      button.style.transform = `translate3d(${x}px, ${y}px, 0)`;
+    });
+
+    button.addEventListener("pointerleave", () => {
+      button.style.removeProperty("transform");
+    });
+  });
+}
+
+const trackedSections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll('.primary-nav a[href^="#"]');
+
+if ("IntersectionObserver" in window && trackedSections.length) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      const current = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+      if (!current) return;
+
+      navLinks.forEach((link) => {
+        link.classList.toggle(
+          "active-section",
+          link.getAttribute("href") === `#${current.target.id}`
+        );
+      });
+    },
+    { rootMargin: "-25% 0px -55% 0px", threshold: [0.05, 0.25, 0.5] }
+  );
+
+  trackedSections.forEach((section) => sectionObserver.observe(section));
+}

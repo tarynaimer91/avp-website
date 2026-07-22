@@ -1144,3 +1144,144 @@ h2 span {
     flex-direction: column;
   }
 }
+
+/* Interaction layer */
+
+:root {
+  --page-shift: 0px;
+}
+
+.scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 2000;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold-dark), var(--gold-light), var(--silver));
+  box-shadow: 0 0 18px rgba(111, 149, 130, 0.55);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+.hero-grid {
+  transform: translate3d(0, var(--page-shift), 0);
+}
+
+.hero-orb-one {
+  transform: translate3d(0, calc(var(--page-shift) * -0.65), 0);
+}
+
+.hero-orb-two {
+  transform: translate3d(0, calc(var(--page-shift) * -0.35), 0);
+}
+
+.interactive-card {
+  position: relative;
+  isolation: isolate;
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition:
+    transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 260ms ease,
+    box-shadow 260ms ease;
+}
+
+.interactive-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    420px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    rgba(111, 149, 130, 0.16),
+    transparent 54%
+  );
+  transition: opacity 240ms ease;
+}
+
+.interactive-card:hover {
+  border-color: rgba(111, 149, 130, 0.42);
+  box-shadow: 0 24px 65px rgba(5, 6, 7, 0.11);
+}
+
+.interactive-card:hover::after {
+  opacity: 1;
+}
+
+.magnetic {
+  will-change: transform;
+  transition:
+    transform 180ms ease,
+    color var(--transition),
+    background var(--transition),
+    border-color var(--transition);
+}
+
+.primary-nav > a.active-section:not(.nav-cta) {
+  color: var(--platinum);
+}
+
+.primary-nav > a.active-section:not(.nav-cta)::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.industry-row {
+  transition:
+    padding-left 240ms ease,
+    border-color 240ms ease,
+    background 240ms ease;
+}
+
+.industry-row:hover {
+  padding-left: 18px;
+  border-color: rgba(111, 149, 130, 0.42);
+  background: linear-gradient(90deg, rgba(111, 149, 130, 0.08), transparent 62%);
+}
+
+.process-step > span {
+  transition:
+    color 240ms ease,
+    transform 240ms ease;
+}
+
+.process-step:hover > span {
+  color: var(--gold-light);
+  transform: translateX(5px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-grid,
+  .hero-orb-one,
+  .hero-orb-two,
+  .interactive-card {
+    transform: none !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .interactive-card,
+  .industry-row {
+    transform: none !important;
+  }
+
+  .industry-row:hover {
+    padding-left: 0;
+    background: transparent;
+  }
+}
