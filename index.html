@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Alpheyga Venture Partners | Operations & Growth Consulting</title>
+
+  <meta
+    name="description"
+    content="Alpheyga Venture Partners helps businesses eliminate operational bottlenecks, modernize workflows, improve revenue operations, and implement scalable systems."
+  />
+
+  <meta
+    name="keywords"
+    content="management consulting, operations consulting, revenue operations, CRM implementation, workflow optimization, executive advisory"
+  />
+
+  <meta name="author" content="Alpheyga Venture Partners" />
+  <meta name="theme-color" content="#07111f" />
+
+  <meta property="og:title" content="Alpheyga Venture Partners" />
+  <meta
+    property="og:description"
+    content="Operational Intelligence. Practical Execution. Measurable Growth."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alpheygavp.com/" />
+
+  <link rel="canonical" href="https://alpheygavp.com/" />
+
+  <style>
+    :root {
+      --navy: #0b1f3a;
+      --blue: #1f6feb;
+      --dark: #07111f;
+      --dark-soft: #0c1727;
+      --white: #ffffff;
+      --off-white: #f5f7fa;
+      --gray: #9aa6b6;
+      --text: #111827;
+      --border: rgba(255, 255, 255, 0.12);
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      color: #aebbd0;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: var(--blue);
+    }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: rgba(7, 17, 31, 0.84);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--white);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .brand-mark {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 50%;
+      font-size: 0.86rem;
+      letter-spacing: -0.05em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: #cad3df;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      color: var(--white) !important;
+      background: var(--blue);
+      border-radius: 999px;
+    }
+
+    .menu-button {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 12px;
+      background: transparent;
+      color: var(--white);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: 150px 0 90px;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(31, 111, 235, 0.2), transparent 34%),
+        radial-gradient(circle at 10% 90%, rgba(31, 111, 235, 0.1), transparent 30%),
+        linear-gradient(135deg, #07111f 0%, #0b1f3a 65%, #07111f 100%);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.18;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      background-size: 70px 70px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.55fr);
+      align-items: end;
+      gap: 80px;
+    }
+
+    .hero h1 {
+      max-width: 880px;
+      margin-bottom: 30px;
+      font-size: clamp(3.5rem, 7vw, 6.8rem);
+      line-height: 0.98;
+      letter-spacing: -0.065em;
+      text-wrap: balance;
+    }
+
+    .hero h1 span {
+      color: #7eb0ff;
+    }
+
+    .hero-copy {
+      max-width: 750px;
+      margin-bottom: 38px;
+      color: #cad3df;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 750;
+      transition:
+        transform 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: var(--white);
+      background: var(--blue);
+    }
+
+    .button-secondary {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .hero-note {
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.045);
+      backdrop-filter: blur(14px);
+    }
+
+    .hero-note p {
+      margin-bottom: 16px;
+      color: #cad3df;
+      font-size: 0.94rem;
+    }
+
+    .hero-note strong {
+      display: block;
+      color: var(--white);
+      font-size: 1.08rem;
+    }
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-header {
+      max-width: 790px;
+      margin-bottom: 58px;
+    }
+
+    .section-header .eyebrow {
+      color: #56708f;
+    }
+
+    .section-header h2 {
+      margin-bottom: 22px;
+      color: var(--dark);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1.04;
+      letter-spacing: -0.055em;
+    }
+
+    .section-header p {
+      color: #5d6876;
+      font-size: 1.08rem;
+    }
+
+    .problem {
+      background: var(--off-white);
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .problem-statement {
+      position: sticky;
+      top: 120px;
+    }
+
+    .problem-statement h2 {
+      color: var(--dark);
+      font-size: clamp(2.5rem, 5vw, 4.7rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .constraint-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .constraint {
+      display: grid;
+      grid-template-columns: 58px 1fr;
+      gap: 22px;
+      padding: 28px;
+      border: 1px solid #dfe5ec;
+      border-radius: 20px;
+      background: var(--white);
+    }
+
+    .constraint-number {
+      color: var(--blue);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .constraint h3 {
+      margin-bottom: 8px;
+      color: var(--dark);
+      font-size: 1.22rem;
+    }
+
+    .constraint p {
+      color: #66717f;
+    }
+
+    .services {
+      color: var(--white);
+      background: var(--dark);
+    }
+
+    .services .section-header h2 {
+      color: var(--white);
+    }
+
+    .services .section-header p {
+      color: #aeb9c8;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: var(--border);
+    }
+
+    .service {
+      min-height: 285px;
+      padding: 34px;
+      background: var(--dark-soft);
+      transition:
+        background 200ms ease,
+        transform 200ms ease;
+    }
+
+    .service:hover {
+      background: #102039;
+    }
+
+    .service-index {
+      display: block;
+      margin-bottom: 60px;
+      color: #6f8097;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .service h3 {
+      margin-bottom: 15px;
+      font-size: 1.32rem;
+    }
+
+    .service p {
+      color: #aeb9c8;
+      font-size: 0.96rem;
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border-top: 1px solid #dfe5ec;
+    }
+
+    .step {
+      position: relative;
+      padding: 30px 26px 10px 0;
+    }
+
+    .step::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    .step span {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--blue);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      color: var(--dark);
+      font-size: 1.16rem;
+    }
+
+    .step p {
+      color: #66717f;
+      font-size: 0.92rem;
+    }
+
+    .industries {
+      background: var(--off-white);
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .industry {
+      min-height: 160px;
+      display: flex;
+      align-items: flex-end;
+      padding: 24px;
+      border: 1px solid #dfe5ec;
+      border-radius: 18px;
+      background: var(--white);
+      color: var(--dark);
+      font-weight: 750;
+      transition:
+        transform 180ms ease,
+        border-color 180ms ease;
+    }
+
+    .industry:hover {
+      transform: translateY(-4px);
+      border-color: #9abef4;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 90px;
+      align-items: start;
+    }
+
+    .about-quote {
+      color: var(--dark);
+      font-size: clamp(2rem, 4vw, 3.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.05em;
+    }
+
+    .about-copy {
+      display: grid;
+      gap: 24px;
+      color: #596574;
+      font-size: 1.04rem;
+    }
+
+    .cta {
+      padding: 90px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 80% 50%, rgba(31, 111, 235, 0.23), transparent 35%),
+        var(--navy);
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .cta h2 {
+      max-width: 760px;
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+    }
+
+    footer {
+      padding: 70px 0 30px;
+      color: #aeb9c8;
+      background: #050c16;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr 0.7fr;
+      gap: 60px;
+      margin-bottom: 70px;
+    }
+
+    .footer-brand {
+      max-width: 440px;
+    }
+
+    .footer-brand h3 {
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: 1.5rem;
+    }
+
+    .footer-brand p {
+      color: #8996a8;
+    }
+
+    .footer-column h4 {
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-column a {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .footer-column a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition:
+        opacity 700ms ease,
+        transform 700ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .problem-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+      }
+
+      .hero-note,
+      .problem-statement {
+        position: static;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        border-top: 0;
+      }
+
+      .step {
+        border-top: 1px solid #dfe5ec;
+      }
+
+      .industry-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(calc(100% - 28px), var(--max-width));
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 76px;
+        right: 14px;
+        left: 14px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        background: rgba(7, 17, 31, 0.98);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 10px 6px;
+      }
+
+      .nav-cta {
+        text-align: center;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 135px;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.05rem, 15vw, 5rem);
+      }
+
+      section {
+        padding: 82px 0;
+      }
+
+      .services-grid,
+      .industry-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service {
+        min-height: auto;
+      }
+
+      .service-index {
+        margin-bottom: 38px;
+      }
+
+      .cta-inner,
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Alpheyga Venture Partners home">
+        <span class="brand-mark">AVP</span>
+        <span>Alpheyga Venture Partners</span>
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        type="button"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
+        ☰
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#industries">Industries</a>
+        <a href="#process">Process</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Start a Conversation</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Management Consulting · Southern California</span>
+
+          <h1>
+            We identify the constraint.
+            <span>Then we eliminate it.</span>
+          </h1>
+
+          <p class="hero-copy">
+            Alpheyga Venture Partners helps business owners and executive teams
+            modernize operations, improve revenue performance, implement scalable
+            systems, and build organizations prepared for what comes next.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#contact">
+              Schedule a Consultation
+            </a>
+
+            <a class="button button-secondary" href="#services">
+              Explore Our Work
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-note" aria-label="AVP positioning">
+          <p>Operational Intelligence</p>
+          <strong>Practical execution over empty strategy.</strong>
+
+          <p style="margin-top: 24px;">Measurable Growth</p>
+          <strong>Systems designed to produce durable results.</strong>
+        </aside>
+      </div>
+    </section>
+
+    <section class="problem">
+      <div class="container problem-grid">
+        <div class="problem-statement reveal">
+          <span class="eyebrow">The Problem</span>
+          <h2>Every business grows. Until it doesn’t.</h2>
+        </div>
+
+        <div class="constraint-list">
+          <article class="constraint reveal">
+            <span class="constraint-number">01</span>
+            <div>
+              <h3>Revenue becomes unpredictable.</h3>
+              <p>
+                Sales activity increases, but forecasting, follow-up, ownership,
+                and conversion discipline fail to scale with it.
+              </p>
+            </div>
+          </article>
+
+          <article class="constraint reveal">
+            <span class="constraint-number">02</span>
+            <div>
+              <h3>Workflows become workarounds.</h3>
+              <p>
+                Teams rely on fragmented tools, tribal knowledge, manual handoffs,
+                and processes that depend on one person remembering everything.
+              </p>
+            </div>
+          </article>
+
+          <article class="constraint reveal">
+            <span class="constraint-number">03</span>
+            <div>
+              <h3>Technology becomes expensive clutter.</h3>
+              <p>
+                Software is purchased without an operating strategy, leaving
+                leaders with more systems but less visibility.
+              </p>
+            </div>
+          </article>
+
+          <article class="constraint reveal">
+            <span class="constraint-number">04</span>
+            <div>
+              <h3>Execution slows.</h3>
+              <p>
+                Growth stalls not because the business lacks opportunity, but
+                because its operating structure can no longer support momentum.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">What We Do</span>
+          <h2>Strategy that survives contact with reality.</h2>
+          <p>
+            We work across operations, revenue, systems, and executive execution
+            to remove the constraints limiting growth.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <span class="service-index">01</span>
+            <h3>Business Strategy</h3>
+            <p>
+              Clarify priorities, align leadership, and turn ambitious objectives
+              into an executable operating plan.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-index">02</span>
+            <h3>Revenue Operations</h3>
+            <p>
+              Connect marketing, sales, pipeline management, reporting, and
+              accountability into one revenue system.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-index">03</span>
+            <h3>CRM Implementation</h3>
+            <p>
+              Design customer workflows, automation, pipeline stages, ownership,
+              and reporting around the way your business actually operates.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-index">04</span>
+            <h3>Workflow Optimization</h3>
+            <p>
+              Replace bottlenecks, duplicated work, and manual handoffs with
+              repeatable and scalable operating processes.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-index">05</span>
+            <h3>Marketing Transformation</h3>
+            <p>
+              Build measurable acquisition strategies that connect visibility,
+              lead generation, follow-up, and revenue.
+            </p>
+          </article>
+
+          <article class="service reveal">
+            <span class="service-index">06</span>
+            <h3>Executive Advisory</h3>
+            <p>
+              Provide business owners and leadership teams with direct,
+              independent operational guidance and execution support.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Our Process</span>
+          <h2>We do not hand you a deck and disappear.</h2>
+          <p>
+            Our work moves from diagnosis to implementation, measurement, and
+            continuous improvement.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <article class="step reveal">
+            <span>01</span>
+            <h3>Discover</h3>
+            <p>Understand the business, goals, people, systems, and constraints.</p>
+          </article>
+
+          <article class="step reveal">
+            <span>02</span>
+            <h3>Diagnose</h3>
+            <p>Identify where revenue, time, information, and accountability break down.</p>
+          </article>
+
+          <article class="step reveal">
+            <span>03</span>
+            <h3>Design</h3>
+            <p>Create an operating model built around practical implementation.</p>
+          </article>
+
+          <article class="step reveal">
+            <span>04</span>
+            <h3>Deploy</h3>
+            <p>Implement workflows, systems, responsibilities, and measurement.</p>
+          </article>
+
+          <article class="step reveal">
+            <span>05</span>
+            <h3>Optimize</h3>
+            <p>Review performance, remove new constraints, and improve continuously.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries" id="industries">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Selected Industries</span>
+          <h2>Cross-industry experience. Operator-first thinking.</h2>
+          <p>
+            The technology may change. The operating constraints are often
+            remarkably familiar.
+          </p>
+        </div>
+
+        <div class="industry-grid">
+          <div class="industry reveal">Marine & Yachting</div>
+          <div class="industry reveal">Professional Services</div>
+          <div class="industry reveal">Automotive & Powersports</div>
+          <div class="industry reveal">Technology & Media</div>
+          <div class="industry reveal">Financial Services</div>
+          <div class="industry reveal">Manufacturing</div>
+          <div class="industry reveal">Construction</div>
+          <div class="industry reveal">Small & Mid-Market Businesses</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-quote reveal">
+          “Businesses rarely suffer from a lack of ideas. They suffer from
+          friction between the idea and its execution.”
+        </div>
+
+        <div class="about-copy reveal">
+          <span class="eyebrow">About AVP</span>
+
+          <p>
+            Alpheyga Venture Partners is a modern management consulting firm
+            focused on operations, revenue growth, systems implementation, and
+            executive execution.
+          </p>
+
+          <p>
+            We work directly with business owners and leadership teams to identify
+            the operational bottlenecks limiting growth, then build the systems,
+            workflows, and accountability needed to move forward.
+          </p>
+
+          <p>
+            Headquartered in Southern California, AVP serves clients nationwide.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contact">
+      <div class="container cta-inner">
+        <h2>What is the bottleneck costing your business?</h2>
+
+        <a
+          class="button button-primary"
+          href="mailto:tarynaimer91@gmail.com?subject=AVP%20Consultation"
+        >
+          Start a Conversation
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Alpheyga Venture Partners</h3>
+          <p>
+            Operational Intelligence. Practical Execution. Measurable Growth.
+          </p>
+        </div>
+
+        <div class="footer-column">
+          <h4>Company</h4>
+          <a href="#services">Services</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+        </div>
+
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="tel:+19498048232">(949) 804-8232</a>
+          <a href="mailto:tarynaimer91@gmail.com">Email AVP</a>
+          <a href="https://alpheygavp.com/">alpheygavp.com</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Alpheyga Venture Partners.</span>
+        <span>Southern California · Serving clients nationwide</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const navLinks = document.getElementById("navLinks");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.12 }
+    );
+
+    document.querySelectorAll(".reveal").forEach((element) => {
+      revealObserver.observe(element);
+    });
+  </script>
+</body>
+</html>
