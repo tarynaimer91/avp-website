@@ -2,6 +2,8 @@ const header = document.getElementById("site-header");
 const navToggle = document.getElementById("nav-toggle");
 const primaryNav = document.getElementById("primary-nav");
 const currentYear = document.getElementById("current-year");
+const heroMedia = document.querySelector(".hero-media");
+const heroVideo = document.querySelector(".hero-video");
 
 function updateHeader() {
   if (!header) return;
@@ -127,6 +129,22 @@ window.addEventListener("resize", () => {
 const prefersReducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
+
+const prefersLowData = Boolean(navigator.connection?.saveData);
+
+if (heroMedia && heroVideo) {
+  if (prefersReducedMotion || prefersLowData) {
+    heroVideo.pause();
+    heroVideo.removeAttribute("autoplay");
+    heroVideo.preload = "none";
+  } else {
+    const showVideo = () => heroMedia.classList.add("video-ready");
+    heroVideo.addEventListener("canplay", showVideo, { once: true });
+    heroVideo.play().catch(() => {
+      heroMedia.classList.remove("video-ready");
+    });
+  }
+}
 
 const scrollProgress = document.createElement("div");
 scrollProgress.className = "scroll-progress";
