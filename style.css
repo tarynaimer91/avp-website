@@ -96,9 +96,9 @@ ul {
 h1,
 h2,
 h3 {
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Cinzel", Georgia, serif;
   line-height: 1.05;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.025em;
 }
 
 h2 {
@@ -141,39 +141,18 @@ h2 span {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
   color: var(--platinum);
 }
 
-.brand-mark {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(200, 169, 90, 0.6);
-  color: var(--gold);
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 1.15rem;
-  font-weight: 700;
+.brand-logo {
+  display: block;
+  width: clamp(210px, 22vw, 292px);
+  height: auto;
+  object-fit: contain;
 }
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.brand-text strong {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 0.9rem;
-  letter-spacing: 0.18em;
-}
-
-.brand-text small {
-  margin-top: 6px;
-  color: var(--slate);
-  font-size: 0.54rem;
-  letter-spacing: 0.22em;
+.brand-logo-footer {
+  width: min(292px, 100%);
 }
 
 .primary-nav {
@@ -353,7 +332,7 @@ h2 span {
   gap: 12px;
   margin-top: 38px;
   color: var(--slate);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: clamp(1.35rem, 2vw, 2rem);
 }
 
@@ -641,7 +620,7 @@ h2 span {
 .card-number {
   margin-bottom: 62px;
   color: var(--gold);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
 }
@@ -814,7 +793,7 @@ h2 span {
 
 .process-step > span {
   color: var(--gold);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Cinzel", Georgia, serif;
   font-size: 0.78rem;
   letter-spacing: 0.15em;
 }
@@ -999,7 +978,7 @@ h2 span {
   }
 
   .primary-nav > a {
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "Cinzel", Georgia, serif;
     font-size: 1.5rem;
   }
 
@@ -1066,17 +1045,8 @@ h2 span {
     width: min(calc(100% - 32px), var(--container));
   }
 
-  .brand-mark {
-    width: 36px;
-    height: 36px;
-  }
-
-  .brand-text strong {
-    font-size: 0.74rem;
-  }
-
-  .brand-text small {
-    font-size: 0.46rem;
+  .brand-logo {
+    width: 205px;
   }
 
   .hero {
