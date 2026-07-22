@@ -1054,7 +1054,7 @@ h2 span {
   }
 
   .hero-title {
-    font-size: clamp(3rem, 11vw, 4.25rem);
+    font-size: clamp(2.5rem, 10vw, 4rem);
   }
 
   .hero-statement {
