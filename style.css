@@ -1,13 +1,20 @@
 :root {
-  --obsidian: #0b0b0d;
-  --graphite: #17171b;
-  --graphite-light: #202027;
-  --platinum: #f5f5f3;
-  --slate: #8b8b94;
-  --gold: #c8a95a;
-  --gold-light: #e1c879;
-  --border: rgba(255, 255, 255, 0.1);
-  --border-dark: rgba(11, 11, 13, 0.12);
+  --obsidian: #050607;
+  --graphite: #111615;
+  --graphite-light: #1b2420;
+
+  --platinum: #f2f2f3;
+  --silver: #d7d8d8;
+  --steel: #a9aaaa;
+  --slate: #868887;
+
+  --gold: #537565;
+  --gold-light: #6f9582;
+  --gold-dark: #20302a;
+
+  --border: rgba(215, 216, 216, 0.13);
+  --border-dark: rgba(5, 6, 7, 0.13);
+
   --container: 1240px;
   --header-height: 82px;
   --transition: 220ms ease;
@@ -305,7 +312,7 @@ h2 span {
   position: absolute;
   border-radius: 50%;
   filter: blur(110px);
-  opacity: 0.16;
+  opacity: 0.2;
 }
 
 .hero-orb-one {
@@ -321,7 +328,7 @@ h2 span {
   left: -10%;
   width: 380px;
   height: 380px;
-  background: #5368a6;
+  background: #20302a;
 }
 
 .hero-content {
