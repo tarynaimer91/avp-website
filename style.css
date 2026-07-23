@@ -1171,9 +1171,42 @@ h2 span {
   transform: scale(1.025);
 }
 
-.portfolio-media-portrait img,
-.portfolio-media-portrait video {
-  object-position: center 48%;
+.portfolio-art-showcase {
+  background: #eeeae1;
+}
+
+.portfolio-art-showcase .mottola-art-slide {
+  position: absolute;
+  inset: 0;
+  object-fit: contain;
+  opacity: 0;
+  animation: mottola-gallery 30s infinite;
+}
+
+.portfolio-art-showcase .mottola-art-slide:nth-child(2) { animation-delay: 5s; }
+.portfolio-art-showcase .mottola-art-slide:nth-child(3) { animation-delay: 10s; }
+.portfolio-art-showcase .mottola-art-slide:nth-child(4) { animation-delay: 15s; }
+.portfolio-art-showcase .mottola-art-slide:nth-child(5) { animation-delay: 20s; }
+.portfolio-art-showcase .mottola-art-slide:nth-child(6) { animation-delay: 25s; }
+
+.portfolio-art-label {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  z-index: 2;
+  padding: 6px 9px;
+  background: rgba(8, 8, 10, 0.76);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+@keyframes mottola-gallery {
+  0% { opacity: 0; transform: scale(1); }
+  2%, 14% { opacity: 1; }
+  18%, 100% { opacity: 0; transform: scale(1.025); }
 }
 
 .portfolio-media .editorial-video {
@@ -1718,5 +1751,15 @@ h2 span {
   .hero-poster,
   .media-poster {
     opacity: 1 !important;
+  }
+
+  .portfolio-art-showcase .mottola-art-slide {
+    display: none;
+    animation: none;
+  }
+
+  .portfolio-art-showcase .mottola-art-slide:first-child {
+    display: block;
+    opacity: 1;
   }
 }
