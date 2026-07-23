@@ -158,7 +158,7 @@ if (
     (entries) => {
       entries.forEach((entry) => {
         const video = entry.target;
-        const frame = video.closest(".editorial-visual, .industry-media");
+        const frame = video.closest(".editorial-visual, .industry-media, .portfolio-media");
 
         if (entry.isIntersecting) {
           if (video.preload === "none") {
