@@ -146,6 +146,47 @@ if (heroMedia && heroVideo) {
   }
 }
 
+const editorialVideos = document.querySelectorAll(".editorial-video");
+
+if (
+  editorialVideos.length &&
+  !prefersReducedMotion &&
+  !prefersLowData &&
+  "IntersectionObserver" in window
+) {
+  const editorialVideoObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        const frame = video.closest(".editorial-visual, .industry-media");
+
+        if (entry.isIntersecting) {
+          if (video.preload === "none") {
+            video.preload = "metadata";
+            video.load();
+          }
+
+          video.play().then(() => {
+            frame?.classList.add("video-ready");
+          }).catch(() => {
+            frame?.classList.remove("video-ready");
+          });
+        } else {
+          video.pause();
+        }
+      });
+    },
+    { threshold: 0.22, rootMargin: "160px 0px" }
+  );
+
+  editorialVideos.forEach((video) => editorialVideoObserver.observe(video));
+} else {
+  editorialVideos.forEach((video) => {
+    video.pause();
+    video.preload = "none";
+  });
+}
+
 const scrollProgress = document.createElement("div");
 scrollProgress.className = "scroll-progress";
 scrollProgress.setAttribute("aria-hidden", "true");
