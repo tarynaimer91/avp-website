@@ -1171,6 +1171,11 @@ h2 span {
   transform: scale(1.025);
 }
 
+.portfolio-media-portrait img,
+.portfolio-media-portrait video {
+  object-position: center 48%;
+}
+
 .portfolio-media .editorial-video {
   position: absolute;
   inset: 0;
