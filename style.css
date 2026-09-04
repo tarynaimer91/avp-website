@@ -1830,3 +1830,10 @@ h2 span {
     opacity: 1;
   }
 }
+
+.mobile-poster { display:none; }
+
+@media (max-width: 767px) {
+  .editorial-video { display:none !important; }
+  .mobile-poster { display:block !important; width:100%; height:auto; }
+}
