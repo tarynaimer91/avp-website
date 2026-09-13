@@ -1834,6 +1834,14 @@ h2 span {
 .mobile-poster { display:none; }
 
 @media (max-width: 767px) {
-  .editorial-video { display:none !important; }
-  .mobile-poster { display:block !important; width:100%; height:auto; }
+  .editorial-video {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+  }
+
+  .mobile-poster {
+    display: none !important;
+  }
 }
